@@ -1,0 +1,73 @@
+{
+  "repo": "javacanary",
+  "language": "Java",
+  "category": "Reliability",
+  "goal": "Debounce health checks and explain readiness state.",
+  "review_model": {
+    "terms": [
+      "budget pressure",
+      "failure width",
+      "recovery gap",
+      "runbook drift"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "budget pressure",
+      "signal": 51,
+      "slack": 37,
+      "drag": 14,
+      "confidence": 70,
+      "score": 167,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "failure width",
+      "signal": 80,
+      "slack": 42,
+      "drag": 9,
+      "confidence": 63,
+      "score": 238,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "recovery gap",
+      "signal": 86,
+      "slack": 32,
+      "drag": 12,
+      "confidence": 49,
+      "score": 217,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "runbook drift",
+      "signal": 89,
+      "slack": 29,
+      "drag": 17,
+      "confidence": 71,
+      "score": 227,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "budget pressure",
+      "signal": 82,
+      "slack": 31,
+      "drag": 13,
+      "confidence": 64,
+      "score": 220,
+      "lane": "ship"
+    }
+  ]
+}
