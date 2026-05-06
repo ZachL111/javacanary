@@ -1,0 +1,28 @@
+{
+  "repo": "javacanary",
+  "language": "Java",
+  "category": "Reliability",
+  "goal": "Debounce health checks and explain readiness state.",
+  "weights": {
+    "signal": 2,
+    "slack": 1,
+    "confidence": 1,
+    "drag": 3
+  },
+  "thresholds": {
+    "ship": 155,
+    "watch": 123
+  },
+  "properties": [
+    "raising signal cannot reduce score",
+    "raising drag cannot improve score",
+    "lane labels must match configured thresholds",
+    "golden fixture ids must remain unique"
+  ],
+  "fixture_files": [
+    "fixtures/golden/scoreboard.csv",
+    "fixtures/golden/lane-matrix.csv",
+    "fixtures/fuzz/mutations.csv",
+    "fixtures/fuzz/boundary-cases.jsonl"
+  ]
+}

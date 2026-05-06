@@ -1,0 +1,17 @@
+{
+  "repo": "javacanary",
+  "thresholds": {
+    "signal": 2,
+    "slack": 1,
+    "confidence": 1,
+    "drag": 3,
+    "ship": 155,
+    "watch": 123
+  },
+  "terms": [
+    "budget pressure",
+    "failure width",
+    "recovery gap",
+    "runbook drift"
+  ]
+}
